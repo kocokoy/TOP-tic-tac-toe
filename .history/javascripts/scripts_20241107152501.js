@@ -24,19 +24,12 @@ function createGameBoard(){
 }
 
 function gameBoardBoxClicked(){
-  let playing = '';
-  let turn = false;
+  let playing = true;
   gameBoardElement.addEventListener('click', (e) => {
     const boxClicked = e.target;
-    if(turn){
-      playing = players.player2;
-      turn = false;
-    }else{
-      playing = players.player1;
-      turn = true;
-    }
+    if(playing){
 
-    boxClicked.textContent = playing;
-    
+    }
+    boxClicked.textContent = players.player1;
   })
 }

@@ -30,7 +30,7 @@ function gameBoardBoxClicked(){
     const boxClicked = e.target;
     if(turn){
       playing = players.player2;
-      turn = false;
+      turn = flase;
     }else{
       playing = players.player1;
       turn = true;
