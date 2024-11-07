@@ -21,13 +21,13 @@ body{
 }
 .gameboard div{
   border: 1px solid red;
-  height: 193px;
-  width: 180px;
+  height:195px;
+  width: 195px;
   cursor: pointer;
   color: tomato;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 100px;
+  font-size: 10rem;
 }
 

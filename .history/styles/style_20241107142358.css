@@ -2,7 +2,6 @@ body{
   padding: 0;
   margin: 0;
   height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
 }
 .container{
   height:100%;
@@ -13,21 +12,13 @@ body{
 .gameboard{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  align-items: center;
+  /* gap: 10px; */
   border: 5px solid red;
-  width: 40%;
+  width: 30%;
   height: 90%;
 }
 .gameboard div{
   border: 1px solid red;
-  height: 193px;
-  width: 180px;
   cursor: pointer;
-  color: tomato;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100px;
 }
 

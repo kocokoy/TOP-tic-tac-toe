@@ -12,20 +12,16 @@ startGame();
 
 function startGame(){
   createGameBoard();
-  gameBoardBoxClicked();
 }
 
 function createGameBoard(){
   for(let i = 0; i < 9; i++){
-    const div = document.createElement('div');
-    div.setAttribute('data-id',i);
+    const div = document.createElement('div','i');
+    div.setAttribute('data-id');
     gameBoardElement.appendChild(div);
   }
 }
 
 function gameBoardBoxClicked(){
-  gameBoardElement.addEventListener('click', (e) => {
-    const boxClicked = e.target;
-    boxClicked.textContent = 'X'
-  })
+
 }

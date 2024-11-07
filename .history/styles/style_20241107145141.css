@@ -22,7 +22,7 @@ body{
 .gameboard div{
   border: 1px solid red;
   height: 193px;
-  width: 180px;
+  width: 185px;
   cursor: pointer;
   color: tomato;
   display: flex;

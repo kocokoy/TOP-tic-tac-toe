@@ -1,7 +1,7 @@
 const gameBoardElement = document.querySelector('.gameboard');
 
 const gameBoard = {
-  gameBoard : ['','','','','','','','','']
+  gameBoard : []
 }
 const players = {
   player1: 'X',
@@ -9,23 +9,12 @@ const players = {
 }
 
 startGame();
-
 function startGame(){
-  createGameBoard();
-  gameBoardBoxClicked();
+  createGameBoard()
 }
-
 function createGameBoard(){
   for(let i = 0; i < 9; i++){
     const div = document.createElement('div');
-    div.setAttribute('data-id',i);
     gameBoardElement.appendChild(div);
   }
-}
-
-function gameBoardBoxClicked(){
-  gameBoardElement.addEventListener('click', (e) => {
-    const boxClicked = e.target;
-    boxClicked.textContent = 'X'
-  })
 }

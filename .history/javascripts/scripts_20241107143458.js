@@ -12,7 +12,6 @@ startGame();
 
 function startGame(){
   createGameBoard();
-  gameBoardBoxClicked();
 }
 
 function createGameBoard(){
@@ -24,8 +23,5 @@ function createGameBoard(){
 }
 
 function gameBoardBoxClicked(){
-  gameBoardElement.addEventListener('click', (e) => {
-    const boxClicked = e.target;
-    boxClicked.textContent = 'X'
-  })
+
 }

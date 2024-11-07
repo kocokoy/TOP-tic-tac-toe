@@ -21,8 +21,8 @@ body{
 }
 .gameboard div{
   border: 1px solid red;
-  height: 193px;
-  width: 180px;
+  height: 192px;
+  width: 100px;
   cursor: pointer;
   color: tomato;
   display: flex;
