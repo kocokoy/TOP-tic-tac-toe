@@ -28,7 +28,7 @@ function gameBoardBoxClicked(){
   let turn = false;
   gameBoardElement.addEventListener('click', (e) => {
     const boxClicked = e.target;
-
+    console.log(boxClicked);
       if(checkButtonIsClicked(boxClicked)){
         return;
       }
@@ -43,7 +43,6 @@ function gameBoardBoxClicked(){
   
   boxClicked.textContent = playing;
   boxClicked.setAttribute('data-clicked', 'true');
-  updateGameBoardArray(boxClicked,playing);
 });
 }
 
@@ -53,8 +52,6 @@ function checkButtonIsClicked(boxClicked){
     }
 }
 
-function updateGameBoardArray(box,playing){
-  const id = box.getAttribute("data-id");
-  gameBoard.gameBoard[id] = playing;
-  console.log(gameBoard.gameBoard);
+function updateGameBoardArray(box){
+  
 }

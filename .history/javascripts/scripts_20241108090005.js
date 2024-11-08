@@ -28,10 +28,7 @@ function gameBoardBoxClicked(){
   let turn = false;
   gameBoardElement.addEventListener('click', (e) => {
     const boxClicked = e.target;
-
-      if(checkButtonIsClicked(boxClicked)){
-        return;
-      }
+    checkButtonIsClicked(boxClicked);
 
       if (turn) {
         playing = players.player2;
@@ -43,18 +40,11 @@ function gameBoardBoxClicked(){
   
   boxClicked.textContent = playing;
   boxClicked.setAttribute('data-clicked', 'true');
-  updateGameBoardArray(boxClicked,playing);
 });
 }
 
 function checkButtonIsClicked(boxClicked){
   if (boxClicked.getAttribute('data-clicked') === 'true') {
-    return true; 
+    return; 
     }
-}
-
-function updateGameBoardArray(box,playing){
-  const id = box.getAttribute("data-id");
-  gameBoard.gameBoard[id] = playing;
-  console.log(gameBoard.gameBoard);
 }

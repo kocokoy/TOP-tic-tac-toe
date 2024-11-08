@@ -55,6 +55,5 @@ function checkButtonIsClicked(boxClicked){
 
 function updateGameBoardArray(box,playing){
   const id = box.getAttribute("data-id");
-  gameBoard.gameBoard[id] = playing;
-  console.log(gameBoard.gameBoard);
+  gameBoard.gameBoard[id] = playing
 }

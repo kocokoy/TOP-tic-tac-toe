@@ -43,7 +43,7 @@ function gameBoardBoxClicked(){
   
   boxClicked.textContent = playing;
   boxClicked.setAttribute('data-clicked', 'true');
-  updateGameBoardArray(boxClicked,playing);
+  updateGameBoardArray(boxClicked);
 });
 }
 
@@ -53,8 +53,6 @@ function checkButtonIsClicked(boxClicked){
     }
 }
 
-function updateGameBoardArray(box,playing){
-  const id = box.getAttribute("data-id");
-  gameBoard.gameBoard[id] = playing;
-  console.log(gameBoard.gameBoard);
+function updateGameBoardArray(box){
+  console.log(box);
 }
