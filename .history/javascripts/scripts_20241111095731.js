@@ -7,19 +7,20 @@ const players = {
   player1: 'X',
   player2: 'O',
 }
-let playing = '';
-let turn = false;
+
 
 
 startGame();
 
 function startGame(){
   createGameBoard();
-  gameBoardBoxClicked();
+  let {boxClicked, playing} = gameBoardBoxClicked();
+  console.log(playing);
+  console.log(boxClicked);
 }
 
 function createGameBoard(){
-  for(let i = 0; i < gameBoard.gameBoard.length; i++){
+  for(let i = 0; i < gameBoard.length; i++){
     const div = document.createElement('div');
     div.setAttribute('data-id',i);
     gameBoardElement.appendChild(div);
@@ -27,9 +28,12 @@ function createGameBoard(){
 }
 
 function gameBoardBoxClicked(){
-
+  let playing = '';
+  let turn = false;
+  let boxClicked = null;
   gameBoardElement.addEventListener('click', (e) => {
-    let boxClicked = e.target;
+    boxClicked = e.target;
+
       if(checkButtonIsClicked(boxClicked)){
         return;
       }
@@ -44,8 +48,9 @@ function gameBoardBoxClicked(){
   
   boxClicked.textContent = playing;
   boxClicked.setAttribute('data-clicked', 'true');
-  updateGameBoardArray(boxClicked,playing);
+  // updateGameBoardArray(boxClicked,playing);
 });
+  return {boxClicked, playing};
 }
 
 function checkButtonIsClicked(boxClicked){
@@ -62,13 +67,12 @@ function updateGameBoardArray(box,playing){
 
   if(winner){
     alert(`${winner} Wins`);
-    resetGame();
     return;
   }
   
   if(draw){
     alert(`draw`);
-    resetGame();
+    return;
   }
   
 }
@@ -104,14 +108,5 @@ function displayResult(result){
 }
 
 function checkForDraw(result){
- return result.every(cell => cell !== null);
-}
-
-function resetGame(){
-  gameBoardElement.innerHTML = '';
-  console.log(playing)
-  playing = '';
-  turn = false;
-  gameBoard.gameBoard = Array(9).fill(null);
-  startGame();
+ return result.every(i => i != null);
 }

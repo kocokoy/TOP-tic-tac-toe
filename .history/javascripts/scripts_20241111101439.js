@@ -41,6 +41,8 @@ function gameBoardBoxClicked(){
         playing = players.player1;
         turn = true;
       }
+
+      console.log(turn);
   
   boxClicked.textContent = playing;
   boxClicked.setAttribute('data-clicked', 'true');
@@ -63,7 +65,6 @@ function updateGameBoardArray(box,playing){
   if(winner){
     alert(`${winner} Wins`);
     resetGame();
-    return;
   }
   
   if(draw){

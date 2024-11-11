@@ -7,8 +7,7 @@ const players = {
   player1: 'X',
   player2: 'O',
 }
-let playing = '';
-let turn = false;
+
 
 
 startGame();
@@ -27,9 +26,12 @@ function createGameBoard(){
 }
 
 function gameBoardBoxClicked(){
-
+  let playing = '';
+  let turn = false;
+  let boxClicked = null;
   gameBoardElement.addEventListener('click', (e) => {
-    let boxClicked = e.target;
+    boxClicked = e.target;
+
       if(checkButtonIsClicked(boxClicked)){
         return;
       }
@@ -62,13 +64,12 @@ function updateGameBoardArray(box,playing){
 
   if(winner){
     alert(`${winner} Wins`);
-    resetGame();
     return;
   }
   
   if(draw){
     alert(`draw`);
-    resetGame();
+    return;
   }
   
 }
@@ -104,14 +105,5 @@ function displayResult(result){
 }
 
 function checkForDraw(result){
- return result.every(cell => cell !== null);
-}
-
-function resetGame(){
-  gameBoardElement.innerHTML = '';
-  console.log(playing)
-  playing = '';
-  turn = false;
-  gameBoard.gameBoard = Array(9).fill(null);
-  startGame();
+ return result.every(i => i != null);
 }
