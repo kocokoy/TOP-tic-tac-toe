@@ -59,15 +59,9 @@ function updateGameBoardArray(box,playing){
   const id = box.getAttribute("data-id");
   gameBoard.gameBoard[id] = playing;
   const winner = checkWinner(gameBoard.gameBoard);
-  const draw = checkForDraw(gameBoard.gameBoard);
 
   if(winner){
     alert(`${winner} Wins`);
-    return;
-  }
-  
-  if(draw){
-    alert(`draw`);
     return;
   }
   
@@ -101,8 +95,4 @@ function displayResult(result){
   if(result.every(i => i != null) ){
     console.log()
   }
-}
-
-function checkForDraw(result){
- return result.every(i => i != null);
 }

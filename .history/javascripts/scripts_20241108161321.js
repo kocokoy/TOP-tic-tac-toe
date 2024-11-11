@@ -58,19 +58,7 @@ function checkButtonIsClicked(boxClicked){
 function updateGameBoardArray(box,playing){
   const id = box.getAttribute("data-id");
   gameBoard.gameBoard[id] = playing;
-  const winner = checkWinner(gameBoard.gameBoard);
-  const draw = checkForDraw(gameBoard.gameBoard);
-
-  if(winner){
-    alert(`${winner} Wins`);
-    return;
-  }
-  
-  if(draw){
-    alert(`draw`);
-    return;
-  }
-  
+  checkWinner(gameBoard.gameBoard);
 }
 
 
@@ -86,23 +74,11 @@ function checkWinner(gameBoard){
     [2,4,6] 
   ] 
 
-  for(let winMove of winningMoves){
-    const[a, b ,c] = winMove;
-    if(gameBoard[a] && gameBoard[c] === gameBoard[b] && gameBoard[a] === gameBoard[c]){
-      return gameBoard[a];
+  for (let i = 0; i < winningMoves.length; i++) {
+    const [a, b, c] = winningMoves[i]; 
+    if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+      return gameBoard[a]; 
     }
   }
-    return null;
-    
-  
-}
-
-function displayResult(result){
-  if(result.every(i => i != null) ){
-    console.log()
-  }
-}
-
-function checkForDraw(result){
- return result.every(i => i != null);
+  return null; 
 }
